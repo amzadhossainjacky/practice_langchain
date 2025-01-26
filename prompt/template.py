@@ -10,7 +10,6 @@ model = ChatOpenAI(model="gpt-4o-mini", openai_api_key=SECRET_KEY)
 # response = model.invoke(messages)
 # print(response.content)
 
-
 # prompt dynamic template initialization
 from langchain_core.prompts import ChatPromptTemplate
 
