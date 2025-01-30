@@ -27,7 +27,9 @@ embeddings_model = OpenAIEmbeddings(openai_api_key=SECRET_KEY)
 #data based creation
 db_connection = Chroma(embedding_function=embeddings_model, persist_directory='./chroma_db')
 
-query = "Gain Experience with Advanced Topics:"
+# query = "Gain Experience with Advanced Topics:"
+print(f"Enter your query: ")
+query = input()
 similarity_docs = db_connection.similarity_search(query, k=1)
 #print(similarity_docs)
 print(similarity_docs[0].page_content)

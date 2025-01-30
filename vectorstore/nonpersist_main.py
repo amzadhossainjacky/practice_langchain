@@ -28,7 +28,9 @@ embeddings_model = OpenAIEmbeddings(openai_api_key=SECRET_KEY)
 #data based creation
 #db = Chroma.from_documents(tech_split_doc, embeddings_model)
 db = FAISS.from_documents(tech_split_doc, embeddings_model)
-query = "Everyday Protection vs. Underwater Adventures"
+#query = "Everyday Protection vs. Underwater Adventures"
+print(f"Enter your query: ")
+query = input()
 
 docs = db.similarity_search(query)
 print(docs[0].page_content)
